@@ -39,8 +39,8 @@ jobs:
           - os: macos-latest
             TARGET: macos
             CMD_BUILD: pyinstaller --onefile -n CarbonCalculator CarbonCalculator.pyw
-            OUT_FILE_NAME: clipster.zip
-            ASSET_MIME: application/zip
+            OUT_FILE_NAME: CarbonCalculator.app
+            ASSET_MIME: application/octet-stream
           - os: windows-latest
             TARGET: windows
             CMD_BUILD: pyinstaller --onefile -n  CarbonCalculator.pyw
