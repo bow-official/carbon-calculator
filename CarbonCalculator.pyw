@@ -1,7 +1,6 @@
 from guizero import App, Text, TextBox, Box, PushButton
 import requests
 import webbrowser
-import time
 irapi = "https://cloud.mymetaverse.io/users/p2e/614fbb71f2da386d1906fe55"
 response_ir = requests.get(irapi)
 irpull = response_ir.json()
