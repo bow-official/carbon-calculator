@@ -3,7 +3,7 @@ name: Build
 on:
   push:
     tags:
-      - 'compile*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
 
@@ -38,16 +38,13 @@ jobs:
         include:
           - os: macos-latest
             TARGET: macos
-            CMD_BUILD: >
-                pyinstaller -F -w -n clipster -i resources/clipster.icns cli.py &&
-                cd dist/ &&
-                zip -r9 clipster clipster.app/
+            CMD_BUILD: pyinstaller --onefile -n CarbonCalculator CarbonCalculator.pyw
             OUT_FILE_NAME: clipster.zip
             ASSET_MIME: application/zip
           - os: windows-latest
             TARGET: windows
-            CMD_BUILD: pyinstaller -F -w -n clipster -i resources/clipster.ico cli.py
-            OUT_FILE_NAME: clipster.exe
+            CMD_BUILD: pyinstaller --onefile -n  CarbonCalculator.pyw
+            OUT_FILE_NAME: CarbonCalculator.exe
             ASSET_MIME: application/vnd.microsoft.portable-executable
     steps:
     - uses: actions/checkout@v1
