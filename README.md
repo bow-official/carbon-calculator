@@ -7,7 +7,7 @@ It's a simple tool for checking:
 3. More uses!
 
 # Setup
-On Windows: No setup needed, download the latest release!
+On Windows with EXE: No setup needed, download the latest release!
 
 Using source code: Make sure to download Python (https://www.python.org/downloads). After, you need a few libraries. Run these in the Terminal or Command Prompt: 
 (pip3 install requests) (pip3 install guizero)
