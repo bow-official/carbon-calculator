@@ -16,8 +16,8 @@ def learning():
 def calc_infrealm():
     irpool= round((irpull['assignedAmount']))
     irtier_one_metaprofiles = str(irtier_one_metaprofiles_a.value)
-    irtier_two_metaprofiles = str(irtier_one_metaprofiles_a.value)
-    irtier_three_metaprofiles = str(irtier_one_metaprofiles_a.value)
+    irtier_two_metaprofiles = str(irtier_two_metaprofiles_a.value)
+    irtier_three_metaprofiles = str(irtier_three_metaprofiles_a.value)
     ir_tier_one = round(((irpool / 15  * (0.5)) * int(irtier_one_metaprofiles)))
     ir_tier_two = round(((irpool / 15  * (0.3)) * int(irtier_two_metaprofiles)))
     ir_tier_three = round(((irpool / 15  * (0.2)) * int(irtier_three_metaprofiles)))
@@ -27,8 +27,8 @@ def calc_infrealm():
 def calc_survinf():
     sipool= round((sipull['assignedAmount']))
     sitier_one_metaprofiles = str(sitier_one_metaprofiles_a.value)
-    sitier_two_metaprofiles = str(sitier_one_metaprofiles_a.value)
-    sitier_three_metaprofiles = str(sitier_one_metaprofiles_a.value)
+    sitier_two_metaprofiles = str(sitier_two_metaprofiles_a.value)
+    sitier_three_metaprofiles = str(sitier_three_metaprofiles_a.value)
     si_tier_one = round(((sipool / 15  * (0.5)) * int(sitier_one_metaprofiles)))
     si_tier_two = round(((sipool / 15  * (0.3)) * int(sitier_two_metaprofiles)))
     si_tier_three = round(((sipool / 15  * (0.2)) * int(sitier_three_metaprofiles)))
