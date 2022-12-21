@@ -22,7 +22,8 @@ def calc_infrealm():
     ir_tier_two = round(((irpool / 15  * (0.3)) * int(irtier_two_metaprofiles)))
     ir_tier_three = round(((irpool / 15  * (0.2)) * int(irtier_three_metaprofiles)))
     irtotal = str(ir_tier_one + ir_tier_two + ir_tier_three)
-    irtotal_msg = Text(results, color="green", text=irtotal + " KG of Carbon from Infinity Realms")
+    irmoney = str(round(int(irtotal) / 5))
+    irtotal_msg = Text(results, color="green", text=irtotal + " KG of Carbon from Infinity Realms ($" + irmoney + ")")
     
 def calc_survinf():
     sipool= round((sipull['assignedAmount']))
@@ -33,7 +34,8 @@ def calc_survinf():
     si_tier_two = round(((sipool / 15  * (0.3)) * int(sitier_two_metaprofiles)))
     si_tier_three = round(((sipool / 15  * (0.2)) * int(sitier_three_metaprofiles)))
     sitotal = str(si_tier_one + si_tier_two + si_tier_three)
-    sitotal_msg = Text(results, color="green", text=sitotal + " KG of Carbon from Survival Infinity")
+    simoney = str(round(int(sitotal) / 5))
+    sitotal_msg = Text(results, color="green", text=sitotal + " KG of Carbon from Survival Infinity ($" + simoney + ")")
     
 app = App("Carbon Calculator", height=750)
 header = Text(app, text="Carbon Calculator v1 - Made by BowFun", size=16)
