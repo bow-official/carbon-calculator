@@ -1,6 +1,6 @@
 # carbon-calculator
-A tool for the MyMetaverse games Survival Infinity and Infinity Realms.
-This tool calculates your Carbon payouts. It will get the current Carbon pool for each game and add it to the calculator.
+A tool for the MyMetaverse games Survival Infinity, Infinity Realms, and Impulse.
+This tool calculates your Carbon P2E payouts. It will get the current Carbon pool for each game and add it to the calculator.
 It's a simple tool for checking:
 1. Carbon balances accross multiple MetaProfiles.
 2. If your payouts are correct based on a calculated number right before the payout.
