@@ -58,12 +58,13 @@ def calc_impulse():
     immoney = str(round(int(imtotal) / 5))
     imtotal_msg = Text(imresults, color="green", text=imtotal + " KG of Carbon from Impulse ($" + immoney + ")")
 
-app = App("Carbon Calculator", height=700, bg="white")
-themebox = Box(app)
+app = App("Carbon Calculator", height=730, bg="white")
 impulseWindow = Window(app, height=425, title="Carbon Calculator - Impulse", bg="white")
 header = Text(app, text="Carbon Calculator v1.4 - Made by BowFun", size=16)
 subtext = Text(app, text="Calculate your earning of Carbon without worrying about math!")
 spacer = Text(app, text=" ", size=5)
+themebox = Box(app)
+spacertwo = Text(app, text=" ", size=5)
 learn = PushButton(app, text="Learn about Carbon!", command=learning, width=15, height=1)
 results = Box(app)
 infrealm = Box(app)
@@ -115,7 +116,6 @@ imtier_six_metaprofiles_explain = Text(impulse, text="Enter the number of MetaPr
 imtier_six_metaprofiles_a = TextBox(impulse, text=0)
 imspacer_six = Text(impulse, text=" ", size=5)
 calculate_button = PushButton(impulse, command=calc_impulse, text="Calculate Carbon")
-
 
 def themeSwitch():
     if app.bg == "white":
