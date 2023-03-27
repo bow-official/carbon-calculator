@@ -2,6 +2,9 @@ from guizero import App, Text, TextBox, Box, PushButton, Window
 import requests
 import webbrowser
 import time
+
+programVersion = "v1.5"
+
 irapi = "https://cloud.mymetaverse.io/users/p2e/614fbb71f2da386d1906fe55"
 response_ir = requests.get(irapi)
 irpull = response_ir.json()
@@ -60,7 +63,7 @@ def calc_impulse():
 
 app = App("Carbon Calculator", height=730, bg="white")
 impulseWindow = Window(app, height=425, title="Carbon Calculator - Impulse", bg="white")
-header = Text(app, text="Carbon Calculator v1.4 - Made by BowFun", size=16)
+header = Text(app, text="Carbon Calculator " + programVersion + " - Made by BowFun", size=16)
 subtext = Text(app, text="Calculate your earning of Carbon without worrying about math!")
 spacer = Text(app, text=" ", size=5)
 themebox = Box(app)
@@ -116,6 +119,35 @@ imtier_six_metaprofiles_explain = Text(impulse, text="Enter the number of MetaPr
 imtier_six_metaprofiles_a = TextBox(impulse, text=0)
 imspacer_six = Text(impulse, text=" ", size=5)
 calculate_button = PushButton(impulse, command=calc_impulse, text="Calculate Carbon")
+
+# Set the repository URL and package name
+repo_url = 'https://api.github.com/repos/bowfun/carbon-calculator/releases/latest'
+response = requests.get(repo_url)
+
+# Make a GET request to the GitHub API
+response = requests.get(repo_url)
+
+# Check if the response was successful
+if response.status_code == 200:
+    # Get the latest release version number
+    latest_version = response.json()['tag_name']
+    print(f'Latest version: {latest_version}')
+
+    # Check if the latest release is the same as the installed package version
+    if latest_version == programVersion:
+        print('Package is up to date.')
+    else:
+        print('Package is not up to date.')
+        def update_program():
+            updateURL = "https://github.com/bowfun/carbon-calculator/releases/latest"
+            webbrowser.open(updateURL)
+        outdatedMessageBox = Window(app, title="Outdated Version", height=150)
+        outdatedMessage = Text(outdatedMessageBox, text="Your version of Carbon Calculator, "+programVersion+", is outdated!")
+        outdatedMessageTwo = Text(outdatedMessageBox, text="Update by clicking the button below.")
+        outdatedButton = PushButton(outdatedMessageBox, command=update_program, text="Update")
+else:
+    print('Error getting latest release.')
+
 
 def themeSwitch():
     if app.bg == "white":

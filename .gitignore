@@ -1,1 +1,6 @@
-.idea
+.idea/
+
+# PyInstaller Files
+build/
+spec/
+dist/
