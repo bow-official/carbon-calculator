@@ -3,7 +3,7 @@ import requests
 import webbrowser
 import time
 
-programVersion = "v1.5"
+programVersion = "v1.6"
 
 irapi = "https://cloud.mymetaverse.io/users/p2e/614fbb71f2da386d1906fe55"
 response_ir = requests.get(irapi)
@@ -122,16 +122,15 @@ calculate_button = PushButton(impulse, command=calc_impulse, text="Calculate Car
 
 # Set the repository URL and package name
 repo_url = 'https://api.github.com/repos/bowfun/carbon-calculator/releases/latest'
-response = requests.get(repo_url)
 
 # Make a GET request to the GitHub API
-response = requests.get(repo_url)
+versioncheck_response = requests.get(repo_url)
 
 # Check if the response was successful
-if response.status_code == 200:
+if versioncheck_response.status_code == 200:
     # Get the latest release version number
-    latest_version = response.json()['tag_name']
-    print(f'Latest version: {latest_version}')
+    latest_version = versioncheck_response.json()['tag_name']
+    print('Latest version: {latest_version}')
 
     # Check if the latest release is the same as the installed package version
     if latest_version == programVersion:
