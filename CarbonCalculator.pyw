@@ -130,7 +130,7 @@ versioncheck_response = requests.get(repo_url)
 if versioncheck_response.status_code == 200:
     # Get the latest release version number
     latest_version = versioncheck_response.json()['tag_name']
-    print('Latest version: {latest_version}')
+    print('Latest version: ' + latest_version)
 
     # Check if the latest release is the same as the installed package version
     if latest_version == programVersion:
